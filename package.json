@@ -26,7 +26,16 @@
     "docker:build": "docker build -t greenledger .",
     "docker:run": "docker run -p 3000:3000 greenledger",
     "docker:compose": "docker-compose up -d",
-    "clean": "rm -rf .next out build dist coverage node_modules/.cache"
+    "clean": "rm -rf .next out build dist coverage node_modules/.cache",
+    "monitor": "chmod +x scripts/monitor.sh && ./scripts/monitor.sh",
+    "monitor:report": "chmod +x scripts/monitor.sh && ./scripts/monitor.sh --report",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "backend:test": "cd backend && npm test",
+    "db:migrate": "cd backend && npm run migrate",
+    "db:seed": "cd backend && npm run seed",
+    "cache:clear": "redis-cli flushall",
+    "queue:dashboard": "npx bull-board"
   },
   "keywords": [
     "blockchain",
